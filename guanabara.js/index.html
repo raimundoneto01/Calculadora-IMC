@@ -6,11 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aula.js</title>
 </head>
-
+<link rel="stylesheet" href="style.css">
 <body>
-    <h1>olá muito</h1>
-    <script src="script.js"></script>
-
     
+    <div id="texto">
+        <h1>Sobre Mim</h1>
+
+        <h2>Só pra testar o DOM em java script</h2>
+        <hr>
+        <p>
+              22 anos, Bacharelado em Sistemas de Informação e Técnico em 
+            Cursando uma formação de Desenvolvimento Full-Stack com especialização em Front-End na Digital House Brasil, através de uma bolsa de estudos.
+            Atuando como Desenvolvedor Front-end, onde lido com aplicações Web em React.js.
+            Possuo conhecimentos sólidos em: HTML5, CSS3, JavaScript, SASS, Figma, Bootstrap, Git e MySQL. Busco futuramente ingressar no mundo do desenvolvimento de aplicações nativas.
+        </p>
+        <p>Raimndo Gomes Resende Neto</p>
+        <div id="msg">Crica em Mim</div>
+    </div>
+   <script>
+   // window.document.write(window.document.URL)  // para mostrar a URl no DOM...
+  // window.document.write("olá mundo") // para escrever manipulando o Dom em java script...
+  var corpo = window.document.body // mechendo no style em java script.
+   var p1 = window.document.getElementsByTagName("p")[1] //parenteses
+/*    window.document.write("Está escrito assim: "  +  p1.innerText) //escrevendo em java script...
+   corpo.style.background = "orange" // mechendo no style em java script.
+   p1.style.color = "blue" // mechendo no style em java script.
+   */
+
+  /*  var d = document.getElementById('msg')
+    d.style.background = "green"
+    d.innerText = "Estou modificando o texto..."
+   document.getElementById("msg").innerText = "olá DOm!"
+   */
+
+   var d = window.document.querySelector("div#msg")
+   d.style.background = "red" // mudando o estilo em java...
+   d.innerText = "EStou mudando o texto" // escrevendo em java script...
+   
+
+  
+   </script>
 </body>
 </html>
