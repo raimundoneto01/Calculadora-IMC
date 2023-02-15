@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tela">
+        <button class="comecar">comecar</button>
+        <div class="boneco"></div>
+        <div class="parede"></div>
+        <div class="pontos"></div>
+    </div>
+
+
+    <script>
+        let boneco = document.querySelector(".boneco");
+        let parede = document.querySelector(".parede");
+        let btnStop = document.querySelector(".btnStop");
+        let pontos = document.querySelector(".pontos");
+        let comecar = document.querySelector(".comecar");
+        let count = 0;
+
+        let paredeAndando = setInterval(function(){
+            if((parede.offsetleft <= 50 && parede.offsetleft < 20) && boneco.offsetTop > 190){
+                clearInterval(paredeAndando);
+                parede.style.left = parede.offsetleft+"px";
+                parede.classList.remove("andando");
+                comecar.style.display = "block";
+                comecar.innerHTML = "Game Ove";
+            }
+        }, 1);
+
+        comecar.addEventListener("click", function(){
+            let count = 3;
+            let regressivo = setInterval(function(){
+                count = count - 1;
+                comecar.innerHTML = count;
+            }, 1000);
+            setTimeou(function(){
+                parede.classList.add("andando");
+                clearInterval(regressivo);
+                comecar.style.display = "none";
+
+            }, 3000);
+        });
+
+        window.addEventListener("click", function(){
+            boneco.classList.add("pulando");
+             setTimeout(function(){
+                count = count + 100;
+                pontos.innerHTML = "";
+                pontos.innerHTML = count;
+                boneco.classList.remove("pulando");
+             }, 500);
+        })
+    </script>
+    
+</body>
+</html>
+
